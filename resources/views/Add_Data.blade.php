@@ -3,7 +3,7 @@
 @extends('Layouts.navbar')
 
 @section('content')
-
+6`
 <div class='container '>
 <h1 class='text-center'> Add Product </h1>
 <div class='text-left'>

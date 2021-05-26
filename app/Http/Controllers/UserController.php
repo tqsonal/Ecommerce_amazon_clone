@@ -124,12 +124,17 @@ public function getcartData(){
 
 
 $data = DB::table('cart')
-->select('cart.quantity', 'products.p_name', 'products.p_image','products.p_price')
+->select('cart.quantity','cart.cart_id', 'products.p_name', 'products.p_image','products.p_price')
             ->join('products', 'cart.p_id', '=', 'products.p_id')
             ->get();
 
 return view('Cart',compact('data'));	
 
+}
+
+public function removeItemfromCart($id){
+  DB::table('cart')->where('cart_id','=',$id)->delete();
+  return redirect('cart');
 }
 
 }

@@ -36,7 +36,7 @@ $total = $total+(($val->p_price) * ($val->quantity));
             <p>{{$val->p_name}}</p>
             <small>Price ₹{{$val->p_price}}</small>
             <br />
-            <a href="#">Remove</a>
+            <a href="{{'/removefromCart/'.$val->cart_id}}">Remove</a>
           </div>
         </div>
       </td>
@@ -511,7 +511,7 @@ input:focus {
 /* cart items */
 
 .cart-page {
-  margin: 90px auto;
+  margin: 20px auto;
 }
 
 table {
@@ -555,6 +555,7 @@ td img {
 .total-price {
   display: flex;
   justify-content: flex-end;
+  margin-right:150px;
 }
 
 .total-price table {

@@ -14,9 +14,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
 Route::get('add_data', function () {
     return view('Add_Data');
 });
@@ -38,3 +36,11 @@ Route::get('edit_data/{id}',[UserController::class,'editData']);
 Route::post('update_data',[UserController::class,'updateData']);
 
 Route:: post( 'addtocart',[UserController::class,'addtoCart']);
+Route ::get('removefromCart/{id}',[UserController::class,'removeItemfromCart']);
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
